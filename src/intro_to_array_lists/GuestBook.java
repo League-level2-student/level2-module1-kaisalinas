@@ -1,5 +1,7 @@
 package intro_to_array_lists;
 
+import javax.swing.JFrame;
+
 public class GuestBook {
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names". 
 	// When the add name button is clicked, display an input dialog that asks the user to enter a name. Add
@@ -9,4 +11,5 @@ public class GuestBook {
 	// Guest #2: Sandy Summers
 	// Guest #3: Greg Ganders
 	// Guest #4: Donny Doners
+
 }
