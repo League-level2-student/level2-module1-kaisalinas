@@ -18,8 +18,8 @@ public class GuestBook implements MouseListener {
 	// Guest #4: Donny Doners
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JButton add = new JButton();
-	JButton view = new JButton();
+	JButton add = new JButton("Add Name");
+	JButton view = new JButton("View Names");
 	public static void main(String[] args) {
 		new GuestBook().names();
 	}
@@ -36,7 +36,12 @@ public class GuestBook implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getSource() == add) {
+			System.out.println("add");
+		}
+		if(e.getSource() == view) {
+			System.out.println("view");
+		}
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
