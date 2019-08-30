@@ -2,9 +2,11 @@ package intro_to_array_lists;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GuestBook implements MouseListener {
@@ -20,6 +22,7 @@ public class GuestBook implements MouseListener {
 	JPanel panel = new JPanel();
 	JButton add = new JButton("Add Name");
 	JButton view = new JButton("View Names");
+	ArrayList<String> names = new ArrayList<String>();
 	public static void main(String[] args) {
 		new GuestBook().names();
 	}
@@ -36,13 +39,18 @@ public class GuestBook implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource() == add) {
-			System.out.println("add");
-		}
 		if(e.getSource() == view) {
-			System.out.println("view");
+			String s = "";
+			for(int i = 0; i<names.size(); i++) {
+			s = s + "Guest #" + (i+1) + ": " + names.get(i);
+			s = s + "\n";
+			}
+			JOptionPane.showMessageDialog(null, s);
 		}
-	}
+		if(e.getSource() == add) {
+		String name = JOptionPane.showInputDialog("Enter a name");
+		names.add(name);
+		}} 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
